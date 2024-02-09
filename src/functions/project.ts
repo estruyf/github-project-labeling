@@ -23,6 +23,7 @@ export async function project(
 
   context.log("Is valid", isValid);
   context.log("Project change", change.action);
+  context.log("Key", process.env.GITHUB_APP_PRIVATE_KEY);
 
   if (!isValid || !change.projects_v2_item) {
     return { status: 401, body: "Unauthorized" };
