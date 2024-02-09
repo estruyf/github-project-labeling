@@ -21,9 +21,6 @@ export async function project(
   const change = (await request.json()) as ProjectChange;
   const isValid = verifySignature(request, change);
 
-  context.log("Is valid", isValid);
-  context.log("Project change", change.action);
-
   const appId = process.env.GITHUB_APP_ID;
   const privateKey = process.env.GITHUB_APP_PRIVATE_KEY.replace(/\\n/g, "\n");
 
