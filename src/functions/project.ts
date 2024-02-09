@@ -112,6 +112,7 @@ export async function project(
       );
     } catch (e) {
       context.log("Error on create/edit", e.message);
+      return { status: 500, body: e.message };
     }
   } else if (change.action === "deleted") {
     try {
@@ -161,6 +162,7 @@ export async function project(
       });
     } catch (e) {
       context.log("Error on delete", e.message);
+      return { status: 500, body: e.message };
     }
   }
 
