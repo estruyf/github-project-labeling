@@ -32,8 +32,12 @@ Install the app to the organization and personal account.
 
 ### Azure Functions
 
-On Azure Functions, create a new function with the following settings:
+On Azure, start by creating a new Azure Function (Linux) with Node.js.
+
+Once the app is created, go to the Configuration tab and add the following environment variables:
 
 - WEBHOOK_SECRET
 - GITHUB_APP_ID
 - GITHUB_APP_PRIVATE_KEY
+
+Download the publish profile, and add it as a secret to the GitHub repository with the `AZURE_FUNCTIONAPP_PUBLISH_PROFILE` name.

@@ -13,6 +13,11 @@ import {
 } from "../util";
 import { App } from "octokit";
 import { queryCard, queryIssue, queryProject } from "../graphql";
+import {
+  GetTableEntityResponse,
+  TableClient,
+  TableEntityResult,
+} from "@azure/data-tables";
 
 export async function project(
   request: HttpRequest,
@@ -30,6 +35,31 @@ export async function project(
 
   if (change.projects_v2_item?.content_type !== "Issue") {
     return { status: 200, body: "Not an issue" };
+  }
+
+  // Verify if it is not a duplicate
+  const deliveryId = request.headers.get("X-GitHub-Delivery");
+  if (!deliveryId) {
+    return { status: 400, body: "Bad request" };
+  }
+
+  const client = TableClient.fromConnectionString(
+    process.env.AzureWebJobsStorage,
+    "deliveryIds"
+  );
+  await client.createTable();
+  let tableEntry: GetTableEntityResponse<
+    TableEntityResult<Record<string, unknown>>
+  >;
+  try {
+    tableEntry = await client.getEntity(deliveryId, "deliveryId");
+  } catch (e) {
+    // Entry does not exist, so that is good
+  }
+
+  if (tableEntry) {
+    context.log("Already processed");
+    return { status: 200, body: "Already processed" };
   }
 
   // Create the project app connection
@@ -165,6 +195,9 @@ export async function project(
       return { status: 500, body: e.message };
     }
   }
+
+  // Add the delivery ID to the table
+  await client.upsertEntity({ partitionKey: deliveryId, rowKey: "deliveryId" });
 
   return { body: `OK` };
 }
