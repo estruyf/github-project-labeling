@@ -23,7 +23,9 @@ export async function project(
 
   context.log("Is valid", isValid);
   context.log("Project change", change.action);
-  context.log("Key", process.env.GITHUB_APP_PRIVATE_KEY);
+
+  const appId = process.env.GITHUB_APP_ID;
+  const privateKey = process.env.GITHUB_APP_PRIVATE_KEY.replace(/\\n/g, "\n");
 
   if (!isValid || !change.projects_v2_item) {
     return { status: 401, body: "Unauthorized" };
@@ -35,8 +37,8 @@ export async function project(
 
   // Create the project app connection
   const projectApp = new App({
-    appId: process.env.GITHUB_APP_ID,
-    privateKey: process.env.GITHUB_APP_PRIVATE_KEY,
+    appId,
+    privateKey,
   });
   const projectOctokit = await projectApp.getInstallationOctokit(
     change.installation.id
@@ -51,8 +53,8 @@ export async function project(
 
       // Create the repository app connection
       const repoApp = new App({
-        appId: process.env.GITHUB_APP_ID,
-        privateKey: process.env.GITHUB_APP_PRIVATE_KEY,
+        appId,
+        privateKey,
       });
 
       const owner = cardData.node.content.repository.owner.login;
@@ -127,8 +129,8 @@ export async function project(
 
       // Create the repository app connection
       const repoApp = new App({
-        appId: process.env.GITHUB_APP_ID,
-        privateKey: process.env.GITHUB_APP_PRIVATE_KEY,
+        appId,
+        privateKey,
       });
 
       const owner = issueData.node.repository.owner.login;
