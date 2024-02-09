@@ -21,6 +21,9 @@ export async function project(
   const change = (await request.json()) as ProjectChange;
   const isValid = verifySignature(request, change);
 
+  context.log("Is valid", isValid);
+  context.log("Project change", change.action);
+
   if (!isValid || !change.projects_v2_item) {
     return { status: 401, body: "Unauthorized" };
   }
