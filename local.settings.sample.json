@@ -1,0 +1,11 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "AzureWebJobsStorage": "",
+    "WEBHOOK_SECRET": "",
+    "GITHUB_APP_ID": "",
+    "GITHUB_APP_PRIVATE_KEY": ""
+  }
+}

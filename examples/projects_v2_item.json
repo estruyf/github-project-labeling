@@ -1,0 +1,73 @@
+{
+  "action": "edited",
+  "projects_v2_item": {
+    "id": 52674946,
+    "node_id": "PVTI_lADOBW5dt84AcXhizgMjwYI",
+    "project_node_id": "PVT_kwDOBW5dt84AcXhi",
+    "content_node_id": "DI_lADOBW5dt84AcXhizgFT9YE",
+    "content_type": "DraftIssue",
+    "creator": {
+      "login": "estruyf",
+      "id": 2900833,
+      "node_id": "MDQ6VXNlcjI5MDA4MzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2900833?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/estruyf",
+      "html_url": "https://github.com/estruyf",
+      "followers_url": "https://api.github.com/users/estruyf/followers",
+      "following_url": "https://api.github.com/users/estruyf/following{/other_user}",
+      "gists_url": "https://api.github.com/users/estruyf/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/estruyf/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/estruyf/subscriptions",
+      "organizations_url": "https://api.github.com/users/estruyf/orgs",
+      "repos_url": "https://api.github.com/users/estruyf/repos",
+      "events_url": "https://api.github.com/users/estruyf/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/estruyf/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2024-02-08T15:21:58Z",
+    "updated_at": "2024-02-08T15:26:16Z",
+    "archived_at": null
+  },
+  "changes": {
+    "field_value": {
+      "field_node_id": "PVTSSF_lADOBW5dt84AcXhizgSU3XM",
+      "field_type": "single_select"
+    }
+  },
+  "organization": {
+    "login": "FrontMatter",
+    "id": 91119031,
+    "node_id": "MDEyOk9yZ2FuaXphdGlvbjkxMTE5MDMx",
+    "url": "https://api.github.com/orgs/FrontMatter",
+    "repos_url": "https://api.github.com/orgs/FrontMatter/repos",
+    "events_url": "https://api.github.com/orgs/FrontMatter/events",
+    "hooks_url": "https://api.github.com/orgs/FrontMatter/hooks",
+    "issues_url": "https://api.github.com/orgs/FrontMatter/issues",
+    "members_url": "https://api.github.com/orgs/FrontMatter/members{/member}",
+    "public_members_url": "https://api.github.com/orgs/FrontMatter/public_members{/member}",
+    "avatar_url": "https://avatars.githubusercontent.com/u/91119031?v=4",
+    "description": "A headless CMS running in VS Code"
+  },
+  "sender": {
+    "login": "estruyf",
+    "id": 2900833,
+    "node_id": "MDQ6VXNlcjI5MDA4MzM=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/2900833?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/estruyf",
+    "html_url": "https://github.com/estruyf",
+    "followers_url": "https://api.github.com/users/estruyf/followers",
+    "following_url": "https://api.github.com/users/estruyf/following{/other_user}",
+    "gists_url": "https://api.github.com/users/estruyf/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/estruyf/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/estruyf/subscriptions",
+    "organizations_url": "https://api.github.com/users/estruyf/orgs",
+    "repos_url": "https://api.github.com/users/estruyf/repos",
+    "events_url": "https://api.github.com/users/estruyf/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/estruyf/received_events",
+    "type": "User",
+    "site_admin": false
+  }
+}
