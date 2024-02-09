@@ -24,7 +24,7 @@ jobs:
       - name: "Checkout GitHub Action"
         uses: actions/checkout@v4
 
-      - name: Setup Node ${{ env.NODE_VERSION }} Environment
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -38,13 +38,6 @@ jobs:
           npm run test --if-present
           popd
 
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9607443C9BA34B6D96558102BC68EF80 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8ED92B7827614591820C5853A77A27AF }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1EE08572107F4A21A0B5FA05054B437D }}
-
       - name: "Run Azure Functions Action"
         uses: Azure/functions-action@v1
         id: fa
@@ -52,3 +45,4 @@ jobs:
           app-name: "github-project-labeling"
           slot-name: "Production"
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
