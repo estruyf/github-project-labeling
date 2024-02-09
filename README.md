@@ -10,7 +10,8 @@ Steps to create the GitHub App:
 
 1. Create a new GitHub App
 1. Activate the webhook
-1. Set the webhook URL and secret
+1. Set the webhook URL to the URL of your Azure Function
+1. Create a webhook secret
 1. Set the permissions
     - Repository permissions:
       - Issues: Read & write
@@ -28,3 +29,11 @@ Things we need for the Azure Functions:
 - Webhook Secret
 
 Install the app to the organization and personal account.
+
+### Azure Functions
+
+On Azure Functions, create a new function with the following settings:
+
+- WEBHOOK_SECRET
+- GITHUB_APP_ID
+- GITHUB_APP_PRIVATE_KEY
