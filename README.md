@@ -2,6 +2,8 @@
 
 Manage your issues with GitHub project labels. When you add an issue to a project, this webhook will automatically add the project's status to the issue. Same thing when you move an project card to another status, the webhook will update the issue's label.
 
+> Read more on the implementation at [Using GitHub Project webhooks to manage labeling issues](https://www.eliostruyf.com/github-project-webhooks-manage-labeling-issues)
+
 ## Prerequisites
 
 ### GitHub App
