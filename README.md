@@ -8,7 +8,7 @@ Manage your issues with GitHub project labels. When you add an issue to a projec
 
 Steps to create the GitHub App:
 
-1. Create a new GitHub App
+1. Create a new GitHub App at [Register new GitHub App](https://github.com/settings/apps/new)
 1. Activate the webhook
 1. Set the webhook URL to the URL of your Azure Function
 1. Create a webhook secret
