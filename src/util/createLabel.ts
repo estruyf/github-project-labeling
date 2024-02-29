@@ -8,7 +8,7 @@ export const createLabel = async (
   name: string,
   description: string
 ) => {
-  if (!labels.find((label) => label === name)) {
+  if (!labels.find((label) => label.toLowerCase() === name.toLowerCase())) {
     await octokit.rest.issues.createLabel({
       owner,
       repo,
