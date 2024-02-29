@@ -59,7 +59,7 @@ export async function project(
 
   if (tableEntry) {
     context.log("Already processed");
-    // return { status: 200, body: "Already processed" };
+    return { status: 200, body: "Already processed" };
   }
 
   // Create the project app connection
