@@ -59,7 +59,7 @@ export async function project(
 
   if (tableEntry) {
     context.log("Already processed");
-    return { status: 200, body: "Already processed" };
+    // return { status: 200, body: "Already processed" };
   }
 
   // Create the project app connection
@@ -104,6 +104,7 @@ export async function project(
       const { data: labels } = await repoOctokit.rest.issues.listLabelsForRepo({
         owner,
         repo,
+        per_page: 100,
       });
 
       const repoLabels = labels.map((label) => label.name);
